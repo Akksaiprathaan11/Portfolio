@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: #020617;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  color: #38bdf8;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+  padding: 120px 80px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 18px;
+  color: #cbd5f5;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: #38bdf8;
+  color: #020617;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+/* SKILLS */
+.skills li {
+  margin-bottom: 50px;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background: #020617;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .hero, .section {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+}
+
+.navbar.scrolled {
+  background: #020617;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contact-links a {
+  color: #010303;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #ebeded;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+
+.contact-links a:hover {
+  background: #2ccf27;
+  color: #020617;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  color: #6b7280;
+  font-size: 14px;
+}
+.hero-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-images img {
+  width: 220px;
+  border-radius: 10px;
+}
+
+.project-card img {
+  width: 50%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.project-card h3 {
+  width: 80%;
+  margin-bottom: 50px;
+}
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-links a img {
+  width: 20px;
+  height: 20px;
+}
+/* CONTACT BACKGROUND FIX */
+.contact-bg {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(
+      rgba(23, 126, 178, 0.85),
+      rgba(80, 191, 225, 0.85)
+    ),
+    url("Asset\Images\8.webp") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* ===== SKILLS ACCORDION VISUAL FIX (NO LAYOUT CHANGE) ===== */
+
+/* Force styling even if wrapper is missed */
+details {
+  background: #020617;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 0;
+  border-left: 4px solid #38bdf8;
+  overflow: hidden;
+}
+
+/* Skill title */
+details > summary {
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #38bdf8;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+/* Remove default arrow */
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom + / − icon */
+details > summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  transition: 0.3s ease;
+}
+
+details[open] > summary::after {
+  content: "−";
+}
+
+/* Skill description */
+details p {
+  padding: 0 20px 20px;
+  color: #cbd5f5;
+  font-size: 16px;
+  line-height: 1.6;
+  animation: skillFade 0.3s ease;
+}
+
+/* Animation */
+@keyframes skillFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.skill-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.skill-accordion details p {
+  margin-top: 12px;
+  color: #cbd5f5;
+  font-size: 16px;
+  line-height: 1.6;
+}
